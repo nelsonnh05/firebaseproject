@@ -1,7 +1,10 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom'; // Import Link component from React Router
 import Carousel from "react-spring-3d-carousel";
 import { v4 as uuidv4 } from "uuid";
 import { config } from "react-spring";
+import menuIcon from '../photos/MENUBLANC.png'; // Import your image
+import logo from '../photos/LogoJOBLANC.png'; 
 
 export default class Example extends Component {
   state = {
@@ -48,22 +51,41 @@ export default class Example extends Component {
   render() {
     return (
       <div>
-        <h2 style={{ color: "white", textAlign: "center", fontFamily: "fair-display" }}>LES</h2>
-        <h1 style={{ color: "white", textAlign: "center", fontFamily: "fair-display" }}>TENUES</h1>
-        <p style={{ color: "white", textAlign: "center", fontFamily: "fair-display", fontSize: "3vh" }}>
-          Dans l'histoire footbalistique française brille un héritage glorieux : les tenues <br />
-          immortelles de l'équipe de France olympique. Voici, gravées dans le panthéon <br />
-          du sport, les tenues sacrées de l'équipe de France de football olympique,<br />
-          témoins éternels de courage, de passion et de grandeur.
-        </p>
-        <div style={{ width: "40%", height: "500px", marginLeft: "auto", marginRight: "auto" }}>
-          <Carousel
-            slides={this.slides}
-            goToSlide={this.state.goToSlide}
-            offsetRadius={this.state.offsetRadius}
-            showNavigation={this.state.showNavigation}
-            animationConfig={this.state.config}
-          />
+            <img src={logo} alt="Logo" className="logo" />
+          
+            
+          <div className="menu-container">
+              
+              <img src={menuIcon} alt="Menu" className="menu-icon" />
+              
+              <div className="menu">
+                  
+                  <Link to="/"> 
+              <p >
+                 acceuil
+              </p>
+              </Link>
+                  
+              </div>
+          </div>
+          <div>
+            <h2 style={{ color: "white", textAlign: "center", fontFamily: "fair-display" }}>LES</h2>
+            <h1 style={{ color: "white", textAlign: "center", fontFamily: "fair-display" }}>TENUES</h1>
+            <p style={{ color: "white", textAlign: "center", fontFamily: "fair-display", fontSize: "3vh" }}>
+            Dans l'histoire footbalistique française brille un héritage glorieux : les tenues <br />
+            immortelles de l'équipe de France olympique. Voici, gravées dans le panthéon <br />
+            du sport, les tenues sacrées de l'équipe de France de football olympique,<br />
+            témoins éternels de courage, de passion et de grandeur.
+            </p>
+            <div style={{ width: "40%", height: "500px", marginLeft: "auto", marginRight: "auto" }}>
+            <Carousel
+                slides={this.slides}
+                goToSlide={this.state.goToSlide}
+                offsetRadius={this.state.offsetRadius}
+                showNavigation={this.state.showNavigation}
+                animationConfig={this.state.config}
+            />
+            </div>
         </div>
       </div>
     );

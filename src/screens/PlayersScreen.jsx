@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebaseConfig';
+import { Link } from 'react-router-dom'; // Import Link component from React Router
 import PlayerCard from '../components/PlayerCard';
+import logo from '../photos/LogoJOBLANC.png';
+import menuIcon from '../photos/MENUBLANC.png';
+
 
 const UserScreen = () => {
   const [players, setPlayers] = useState([]);
@@ -21,6 +25,13 @@ const UserScreen = () => {
 
   return (
     <Container>
+      <img src={logo} alt="Logo" className="logo" />
+      <div className="menu-container">
+        <img src={menuIcon} alt="Menu" className="menu-icon" />
+        <div className="menu">
+          <Link to="/">Accueil</Link>
+        </div>
+      </div>
       <Header>LES 18</Header>
       <Description>Dans la quête de l'or olympique, les équipes nationales de football convoquent leurs héros en devenir.
       <br/>Guidés par la flamme de la jeunesse et de la passion, ces joueurs, <br/>tous âgés de moins de 23 ans, sont sélectionnés pour leur bravoure, 

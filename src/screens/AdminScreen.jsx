@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { collection, getDocs, deleteDoc, doc, setDoc } from 'firebase/firestore';
 import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 import { db } from '../firebaseConfig';
+import { Link } from 'react-router-dom'; 
 import styled from 'styled-components';
+import logo from '../photos/LogoJOBLANC.png';
+import menuIcon from '../photos/MENUBLANC.png';
+
 
 export default function AdminScreen() {
     const [players, setPlayers] = useState([]);
@@ -102,6 +106,13 @@ export default function AdminScreen() {
 
     return (
         <StyledContainer>
+            <img src={logo} alt="Logo" className="logo" />
+            <div className="menu-container">
+                <img src={menuIcon} alt="Menu" className="menu-icon" />
+                <div className="menu">
+                    <Link to="/">Accueil</Link>
+                </div>
+            </div>
             <StyledTitle>Admin Screen</StyledTitle>
             <StyledTable className='player-table'>
                 <thead>
