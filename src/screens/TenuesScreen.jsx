@@ -5,6 +5,20 @@ import { v4 as uuidv4 } from "uuid";
 import { config } from "react-spring";
 import menuIcon from '../photos/MENUBLANC.png'; // Import your image
 import logo from '../photos/LogoJOBLANC.png'; 
+import styled from 'styled-components';
+
+const MenuLink = styled(Link)`
+  background-color: #6b6868;
+  color: white; // Couleur de base pour les liens
+  text-decoration: none;
+  padding: 10px;
+  display: block; // Assure que le lien prend toute la largeur pour le padding
+
+  &:hover {
+    color: #acac4f; // Couleur au survol
+  }
+`;
+
 
 export default class Example extends Component {
   state = {
@@ -54,20 +68,17 @@ export default class Example extends Component {
             <img src={logo} alt="Logo" className="logo" />
           
             
-          <div className="menu-container">
-              
-              <img src={menuIcon} alt="Menu" className="menu-icon" />
-              
-              <div className="menu">
-                  
-                  <Link to="/"> 
-              <p >
-                 acceuil
-              </p>
-              </Link>
-                  
-              </div>
-          </div>
+            <img src={logo} alt="Logo" className="logo" />
+      <div className="menu-container">
+        <img src={menuIcon} alt="Menu" className="menu-icon" />
+        <div className="menu">
+          <MenuLink to="/">Accueil</MenuLink>
+          <MenuLink to="/histoire">Histoire</MenuLink>
+          <MenuLink to="/legendes">Les Légendes</MenuLink>
+          <MenuLink to="/tenues">Tenues</MenuLink>
+          <MenuLink to="/player">Les 18</MenuLink>
+        </div>
+      </div>
           <div>
             <h2 style={{ color: "white", textAlign: "center", fontFamily: "fair-display" }}>LES</h2>
             <h1 style={{ color: "white", textAlign: "center", fontFamily: "fair-display" }}>TENUES</h1>

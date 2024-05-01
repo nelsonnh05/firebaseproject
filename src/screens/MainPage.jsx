@@ -3,6 +3,19 @@ import { Link } from 'react-router-dom'; // Import Link component from React Rou
 import '../css/MainPage.css'; // Import CSS file for styling
 import menuIcon from '../photos/MENUBLANC.png'; // Import your image
 import logo from '../photos/LogoJOBLANC.png'; 
+import styled from 'styled-components';
+
+const MenuLink = styled(Link)`
+  background-color: #6b6868;
+  color: white; // Couleur de base pour les liens
+  text-decoration: none;
+  padding: 10px;
+  display: block; // Assure que le lien prend toute la largeur pour le padding
+
+  &:hover {
+    color: #acac4f; // Couleur au survol
+  }
+`;
 
 const MainPage = () => {
     return (
@@ -36,20 +49,17 @@ const MainPage = () => {
                     4. Les 18
                 </p>
             </Link>
-            
-            {/* Logo */}
             <img src={logo} alt="Logo" className="logo" />
-            {/* Menu Container */}
-            <div className="menu-container">
-                {/* Image for Menu */}
-                <img src={menuIcon} alt="Menu" className="menu-icon" />
-                {/* Menu */}
-                <div className="menu">
-                    <ul>
-                       
-                    </ul>
-                </div>
-            </div>
+      <div className="menu-container">
+        <img src={menuIcon} alt="Menu" className="menu-icon" />
+        <div className="menu">
+          <MenuLink to="/">Accueil</MenuLink>
+          <MenuLink to="/histoire">Histoire</MenuLink>
+          <MenuLink to="/legendes">Les Légendes</MenuLink>
+          <MenuLink to="/tenues">Tenues</MenuLink>
+          <MenuLink to="/player">Les 18</MenuLink>
+        </div>
+      </div>
         </div>
     );
 }

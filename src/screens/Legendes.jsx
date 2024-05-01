@@ -13,6 +13,20 @@ import prout from '../photos/prout.png';
 import Carousel from "react-spring-3d-carousel";
 import { v4 as uuidv4 } from "uuid";
 import { config } from "react-spring";
+import styled from 'styled-components';
+
+const MenuLink = styled(Link)`
+  background-color: #6b6868;
+  color: white; // Couleur de base pour les liens
+  text-decoration: none;
+  padding: 10px;
+  display: block; // Assure que le lien prend toute la largeur pour le padding
+
+  &:hover {
+    color: #acac4f; // Couleur au survol
+  }
+`;
+
 
 class Legendes extends Component {
     state = {
@@ -80,14 +94,17 @@ class Legendes extends Component {
           <img src={arrow} alt="arrow" className="arrow" />
           <img src={logo} alt="Logo" className="logo" />
           
-          <div className="menu-container">
-            <img src={menuIcon} alt="Menu" className="menu-icon" />
-            <div className="menu">
-              <Link to="/"> 
-                <p>Accueil</p>
-              </Link>
-            </div>
-          </div>
+          <img src={logo} alt="Logo" className="logo" />
+      <div className="menu-container">
+        <img src={menuIcon} alt="Menu" className="menu-icon" />
+        <div className="menu">
+          <MenuLink to="/">Accueil</MenuLink>
+          <MenuLink to="/histoire">Histoire</MenuLink>
+          <MenuLink to="/legendes">Les Légendes</MenuLink>
+          <MenuLink to="/tenues">Tenues</MenuLink>
+          <MenuLink to="/player">Les 18</MenuLink>
+        </div>
+      </div>
 
        <div style={{ position: "absolute", bottom: "-700px", left: "50%", transform: "translateX(-50%)", width: "40%", height: "500px" }}>
   <Carousel

@@ -1,11 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebaseConfig';
 import { Link } from 'react-router-dom'; // Import Link component from React Router
 import PlayerCard from '../components/PlayerCard';
 import logo from '../photos/LogoJOBLANC.png';
 import menuIcon from '../photos/MENUBLANC.png';
+import styled from 'styled-components';
+
+const MenuLink = styled(Link)`
+  background-color: #6b6868;
+  color: white; // Couleur de base pour les liens
+  text-decoration: none;
+  padding: 10px;
+  display: block; // Assure que le lien prend toute la largeur pour le padding
+
+  &:hover {
+    color: #acac4f; // Couleur au survol
+  }
+`;
 
 
 const UserScreen = () => {
@@ -29,7 +41,11 @@ const UserScreen = () => {
       <div className="menu-container">
         <img src={menuIcon} alt="Menu" className="menu-icon" />
         <div className="menu">
-          <Link to="/">Accueil</Link>
+          <MenuLink to="/">Accueil</MenuLink>
+          <MenuLink to="/histoire">Histoire</MenuLink>
+          <MenuLink to="/legendes">Les Légendes</MenuLink>
+          <MenuLink to="/tenues">Tenues</MenuLink>
+          <MenuLink to="/player">Les 18</MenuLink>
         </div>
       </div>
       <Header>LES 18</Header>
