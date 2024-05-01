@@ -11,7 +11,7 @@ const Menu = () => {
         <li><StyledLink to="/histoire">HISTOIRE</StyledLink></li>
         <li><StyledLink to="/legendes">LES LEGENDES</StyledLink></li>
         <li><StyledLink to="/tenues">TENUES</StyledLink></li>
-        <li><StyledLink to="/les18">LES 18</StyledLink></li>
+        <li><StyledLink to="/player">LES 18</StyledLink></li>
       </ul>
     </Sidebar>
   );
